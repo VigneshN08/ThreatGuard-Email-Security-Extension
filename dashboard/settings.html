@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard • Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--settings">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html" class="active"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1 class="tg-page-header">Settings</h1>
+          </div>
+          <div class="tg-header__right"></div>
+        </header>
+
+        <main class="tg-main">
+
+      <section class="tg-panel">
+        <div class="tg-tabs">
+          <button class="tg-tab active" data-tab="risk">Risk Thresholds</button>
+          <button class="tg-tab" data-tab="alerts">Alerts</button>
+          <button class="tg-tab" data-tab="api">API</button>
+        </div>
+
+        <div id="tab-risk" class="tg-form" style="display:grid;">
+          <div class="tg-form__row">
+            <label>Low Risk Threshold</label>
+            <input id="thrLow" type="number" min="0" max="1" step="0.01" class="tg-input" />
+          </div>
+          <div class="tg-form__row">
+            <label>Medium Risk Threshold</label>
+            <input id="thrMed" type="number" min="0" max="1" step="0.01" class="tg-input" />
+          </div>
+          <div class="tg-form__row">
+            <label>High Risk Threshold</label>
+            <input id="thrHigh" type="number" min="0" max="1" step="0.01" class="tg-input" />
+          </div>
+          <div class="tg-form__row tg-form__row--actions">
+            <div style="flex:1"></div>
+            <button id="saveRisk" class="tg-btn tg-btn--primary">Save Changes</button>
+          </div>
+        </div>
+
+        <div id="tab-alerts" class="tg-form" style="display:none;">
+          <div class="tg-form__row">
+            <label>Email Alerts</label>
+            <div class="tg-radio">
+              <label><input type="radio" name="emailAlerts" value="enabled" /> Enabled</label>
+              <label><input type="radio" name="emailAlerts" value="disabled" /> Disabled</label>
+            </div>
+          </div>
+          <div class="tg-form__row">
+            <label>Recipient</label>
+            <input id="emailRecipient" type="email" class="tg-input" placeholder="admin@company.com" />
+          </div>
+          <div class="tg-form__row">
+            <label>Alert on</label>
+            <div class="tg-radio">
+              <label><input type="checkbox" id="alertHigh" /> High</label>
+              <label><input type="checkbox" id="alertMed" /> Medium</label>
+              <label><input type="checkbox" id="alertLow" /> Low</label>
+            </div>
+          </div>
+          <div class="tg-form__row tg-form__row--actions">
+            <div style="flex:1"></div>
+            <button id="saveAlerts" class="tg-btn tg-btn--primary">Save Changes</button>
+          </div>
+        </div>
+
+        <div id="tab-api" class="tg-form" style="display:none;">
+          <div class="tg-form__row">
+            <label>API Key</label>
+            <div style="display:flex; gap:8px;">
+              <input id="apiKey" type="password" class="tg-input" placeholder="*******************" />
+              <button id="regenKey" class="tg-btn tg-btn--secondary">Regenerate</button>
+            </div>
+          </div>
+          <div class="tg-form__row">
+            <label>Rate Limit (requests/hour)</label>
+            <input id="rateLimit" type="number" class="tg-input" />
+          </div>
+          <div class="tg-form__row tg-form__row--actions">
+            <div style="flex:1"></div>
+            <button id="saveApi" class="tg-btn tg-btn--primary">Save Changes</button>
+          </div>
+        </div>
+      </section>
+        </main>
+
+        <footer class="tg-footer"></footer>
+      </div>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard • Reports</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--reports">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html" class="active"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1 class="tg-page-header">Reports & Analytics</h1>
+          </div>
+          <div class="tg-header__right"></div>
+        </header>
+
+        <main class="tg-main">
+
+      <section class="tg-panel">
+        <div class="tg-panel__header">📈 Threat Intelligence Reports</div>
+        <div class="tg-form">
+          <div class="tg-form__row" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap:12px;">
+            <div>
+              <label>Report Type</label>
+              <select id="reportType" class="tg-select">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
+            <div>
+              <label>From</label>
+              <input id="from" type="date" class="tg-input tg-select" />
+            </div>
+            <div>
+              <label>To</label>
+              <input id="to" type="date" class="tg-input tg-select" />
+            </div>
+            <div style="display:flex; align-items:end;">
+              <button id="generate" class="tg-btn tg-btn--primary" style="width:100%">Generate Report</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tg-panel">
+        <div class="tg-panel__header">Executive Summary</div>
+        <div class="tg-cards" style="padding:12px;">
+          <div class="tg-card"><div class="tg-card__label">Total Threats Detected</div><div id="sum-total" class="tg-card__value">0</div></div>
+          <div class="tg-card"><div class="tg-card__label">High Priority Threats</div><div id="sum-high" class="tg-card__value tg-danger">0</div></div>
+          <div class="tg-card"><div class="tg-card__label">Detection Accuracy</div><div id="sum-acc" class="tg-card__value">95.0%</div></div>
+          <div class="tg-card"><div class="tg-card__label">False Positive Rate</div><div id="sum-fp" class="tg-card__value">0.8%</div></div>
+        </div>
+      </section>
+
+      <section class="tg-grid-2">
+        <div class="tg-panel">
+          <div class="tg-panel__header">Risk Distribution</div>
+          <div class="tg-trends__chart"><canvas id="riskPie" width="420" height="280"></canvas></div>
+        </div>
+        <div class="tg-panel">
+          <div class="tg-panel__header">Threat Trends</div>
+          <div class="tg-trends__chart"><canvas id="trendLine" width="520" height="280"></canvas></div>
+        </div>
+      </section>
+
+      <section class="tg-panel">
+        <div class="tg-panel__header">Export Report</div>
+        <div style="display:flex; justify-content:flex-end; gap:8px; padding:10px 12px;">
+          <button id="dlCsv" class="tg-btn tg-btn--primary">📥 Download CSV</button>
+        </div>
+      </section>
+        </main>
+
+        <footer class="tg-footer"></footer>
+      </div>
+    </div>
+
+    <script src="reports.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard • Alerts</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--alerts">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html" class="active"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1 class="tg-page-header">Alerts</h1>
+          </div>
+          <div class="tg-header__right"></div>
+        </header>
+
+        <main class="tg-main">
+
+      <section class="tg-panel">
+        <div class="tg-panel__header">🚨 Alert Management</div>
+        <div class="tg-form" style="padding-bottom:0;">
+          <div class="tg-form__row" style="grid-template-columns: 1fr 1fr 1fr; gap:12px;">
+            <div>
+              <label>Filters</label>
+              <div class="tg-radio">
+                <label><input type="radio" name="severity" value="ALL" checked /> All</label>
+                <label><input type="radio" name="severity" value="DANGEROUS" /> High</label>
+                <label><input type="radio" name="severity" value="WARNING" /> Medium</label>
+                <label><input type="radio" name="severity" value="SAFE" /> Low</label>
+              </div>
+            </div>
+            <div>
+              <label>Search</label>
+              <input id="search" class="tg-input" placeholder="Search subject, sender..." />
+            </div>
+            <div>
+              <label>Date Range</label>
+              <div style="display:flex; gap:8px;">
+                <input id="from" type="date" class="tg-input tg-select" />
+                <input id="to" type="date" class="tg-input tg-select" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul id="alerts" class="tg-list"></ul>
+        <div style="display:flex; align-items:center; justify-content: space-between; padding:10px 12px; border-top:1px solid var(--border);">
+          <div>
+            <button id="selectAll" class="tg-btn tg-btn--ghost">Select All</button>
+            <button id="export" class="tg-btn tg-btn--primary">Export Selected</button>
+          </div>
+          <div id="pager" class="muted" style="display:flex; align-items:center; gap:8px;">
+            <button id="prevPage" class="tg-btn tg-btn--ghost" style="padding:4px 8px;">Prev</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage" class="tg-btn tg-btn--ghost" style="padding:4px 8px;">Next</button>
+          </div>
+        </div>
+      </section>
+        </main>
+
+        <footer class="tg-footer"></footer>
+      </div>
+    </div>
+
+    <script src="alerts.js"></script>
+  </body>
+</html>

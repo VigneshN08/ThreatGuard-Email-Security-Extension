@@ -1,0 +1,69 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  width: 280px;
+  margin: 0;
+  color: #e5edff;
+  background: radial-gradient(circle at top, #1f2937 0%, #020617 55%, #000 100%);
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid #1e293b;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content {
+  padding: 16px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
+  border-radius: 0 0 16px 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+.content p {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #9ca3af;
+}
+
+.button {
+  background: linear-gradient(135deg, #1d4ed8, #22c55e);
+  color: #e5edff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.45);
+}

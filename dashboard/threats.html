@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard  Threats</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--threats">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html" class="active"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+          </div>
+          <div class="tg-header__right"></div>
+        </header>
+
+        <main class="tg-main">
+          <div class="tg-page-header">
+            <h2>Threats Overview</h2>
+          </div>
+
+          <section class="tg-status">
+            <span class="dot dot-danger"></span>
+            <span class="label">FOCUS:</span>
+            <strong>High and Critical Email Threats</strong>
+          </section>
+
+          <section class="tg-panel tg-panel--metrics" style="margin-top:16px;">
+            <div class="tg-panel__header">Summary</div>
+            <div class="tg-metrics" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+              <div class="metric metric--danger">
+                <div class="metric__label">Critical (Dangerous)</div>
+                <div class="metric__value" id="threat-critical">0</div>
+              </div>
+              <div class="metric metric--warning">
+                <div class="metric__label">High (Warning)</div>
+                <div class="metric__value" id="threat-high">0</div>
+              </div>
+              <div class="metric metric--total">
+                <div class="metric__label">Total Threats</div>
+                <div class="metric__value" id="threat-total">0</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tg-panel" style="margin-top:18px;">
+            <div class="tg-panel__header">Phishing Breakdown</div>
+            <div class="tg-trends__chart">
+              <canvas id="threatsChart" width="820" height="260"></canvas>
+            </div>
+          </section>
+
+          <section class="tg-section" style="margin-top:18px;">
+            <h2>Threats List</h2>
+            <div class="muted" style="padding:4px 0 10px;">Showing live email threats: Dangerous and High (Warning).</div>
+            <div class="tg-table__wrap">
+              <table class="tg-table" id="threatTable">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Received At</th>
+                    <th>Severity</th>
+                    <th>Category</th>
+                    <th>Threat Category</th>
+                    <th>Recommended Action</th>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                  </tr>
+                </thead>
+                <tbody id="threatBody"></tbody>
+              </table>
+            </div>
+            <div style="margin-top:10px; display:flex; justify-content:space-between; align-items:center;">
+              <button class="tg-btn" id="threatToggle">Show all threats</button>
+              <div id="threatPager" class="muted" style="display:flex; align-items:center; gap:8px;">
+                <button id="threatPrev" class="tg-btn tg-btn--ghost" style="padding:4px 8px;">Prev</button>
+                <span id="threatPageInfo"></span>
+                <button id="threatNext" class="tg-btn tg-btn--ghost" style="padding:4px 8px;">Next</button>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="tg-footer"></footer>
+      </div>
+    </div>
+
+    <script src="threats.js"></script>
+  </body>
+</html>

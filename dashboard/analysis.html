@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard • Email Analysis</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--settings">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html" class="active"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1 class="tg-page-header">Email Analysis</h1>
+          </div>
+          <div class="tg-header__right"></div>
+        </header>
+
+        <main class="tg-main">
+      
+      <section class="tg-panel">
+        <div class="tg-panel__header">📧 Analyze Email</div>
+        <div class="tg-form">
+          <div class="tg-form__row">
+            <label>Subject</label>
+            <input id="subject" type="text" class="tg-input" placeholder="Subject" />
+          </div>
+          <div class="tg-form__row">
+            <label>From</label>
+            <input id="from" type="text" class="tg-input" placeholder="sender@example.com" />
+          </div>
+          <div class="tg-form__row">
+            <label>Email Body</label>
+            <textarea id="body" class="tg-textarea" rows="8" placeholder="Paste email content here..."></textarea>
+          </div>
+          <div class="tg-form__row tg-form__row--actions">
+            <button id="cancel" class="tg-btn tg-btn--ghost">Cancel</button>
+            <div style="flex:1"></div>
+            <label class="tg-upload"><input id="batchCsv" type="file" accept=".csv" /><span>📤 Upload CSV</span></label>
+            <button id="analyze" class="tg-btn tg-btn--primary">🔍 Analyze Email</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="tg-panel" id="results" style="display:none;">
+        <div class="tg-panel__header">📊 Analysis Results</div>
+        <div class="tg-results">
+          <div class="tg-results__summary">
+            <div>Risk Level: <span id="riskBadge" class="badge"><span class="dot"></span><span id="riskLabel">-</span></span></div>
+            <div>Confidence: <strong id="confidence">-</strong></div>
+          </div>
+          <div class="tg-results__grid">
+            <div>
+              <h3>Threat Indicators Detected</h3>
+              <ul id="indicators" class="tg-list"></ul>
+            </div>
+            <div>
+              <h3>ML Model Prediction</h3>
+              <ul id="model" class="tg-list"></ul>
+            </div>
+          </div>
+          <div class="tg-results__actions"></div>
+        </div>
+      </section>
+
+      <section class="tg-panel" id="batchResults" style="display:none; margin-top:16px;">
+        <div class="tg-panel__header">📂 Batch CSV Analysis</div>
+        <div class="tg-table-wrapper">
+          <table class="tg-table tg-table--compact">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>From</th>
+                <th>Subject</th>
+                <th>Risk Level</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="batchTableBody"></tbody>
+          </table>
+        </div>
+        <div class="tg-table__pagination">
+          <button id="batchPrev" class="tg-btn tg-btn--ghost">Prev</button>
+          <span id="batchPageInfo" class="tg-page-info"></span>
+          <button id="batchNext" class="tg-btn tg-btn--ghost">Next</button>
+        </div>
+      </section>
+        </main>
+
+        <footer class="tg-footer"></footer>
+      </div>
+    </div>
+
+    <script src="analysis.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+id,received_at,status_id,severity,type,sender,subject,link
+1,2025-10-01T09:14:22Z,DANGEROUS,Critical,URL Phishing,alerts@paypal-security.com,Unusual Activity Detected,http://secure-paypal-login.xyz
+2,2025-10-02T12:03:10Z,WARNING,High,Domain Spoofing,info@microsoft-support.com,Your Account Will Be Closed,http://m1crosoft.com-reset.link
+3,2025-10-03T16:45:05Z,SAFE,Low,Privacy Invasion,newsletter@example.com,Weekly Update,
+4,2025-10-04T08:22:50Z,DANGEROUS,High,Malware Delivery,billing@contoso-invoices.com,Invoice Attached,https://example.com/invoice.docm
+5,2025-10-05T19:31:07Z,WARNING,Medium,Social Engineering,hr@careers-portal.net,Immediate Action Required: Verify Identity,https://verify-careers-portal.net
+6,2025-10-06T11:11:11Z,DANGEROUS,Critical,Brand Impersonation,support@secure-mybank-login.xyz,Action Needed: Account Locked,https://secure-mybank-login.xyz
+7,2025-10-07T14:27:02Z,WARNING,Medium,Impersonation Fraud,ceo@company-exec.com,Wire transfer ASAP,
+8,2025-10-08T07:05:44Z,SAFE,Low,Uncategorized,updates@github.com,Security update notice,

@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreatGuard Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tg-body tg-body--dashboard">
+    <div class="tg-shell">
+      <aside class="tg-sidebar">
+        <div class="tg-sidebar__brand">
+          <div class="tg-header__left">
+            <img src="../icons/icon48.png" class="tg-logo" alt="ThreatGuard" />
+            <h1>ThreatGuard</h1>
+          </div>
+        </div>
+        <nav class="tg-sidebar__nav">
+          <a href="index.html" class="active"><span class="tg-nav-icon">🏠</span><span>Dashboard</span></a>
+          <a href="threats.html"><span class="tg-nav-icon">⚠️</span><span>Threats</span></a>
+          <a href="alerts.html"><span class="tg-nav-icon">🚨</span><span>Alerts</span></a>
+          <a href="reports.html"><span class="tg-nav-icon">📊</span><span>Reports</span></a>
+          <a href="settings.html"><span class="tg-nav-icon">⚙️</span><span>Settings</span></a>
+          <a href="analysis.html"><span class="tg-nav-icon">✉️</span><span>Email Analysis</span></a>
+        </nav>
+        <div class="tg-sidebar__help">Help</div>
+      </aside>
+
+      <div class="tg-shell__content">
+        <header class="tg-header">
+          <div class="tg-header__left">
+            
+          </div>
+          <div class="tg-header__right">
+            <label class="tg-upload">
+              <input id="csvInput" type="file" accept=".csv" />
+              <span>Upload CSV</span>
+            </label>
+          </div>
+        </header>
+
+        <main class="tg-main">
+          <div class="tg-page-header">
+            <h2>Dashboard</h2>
+          </div>
+
+          <section class="tg-status">
+            <span class="dot dot-safe"></span>
+            <span class="label">REAL-TIME STATUS:</span>
+            <strong>All Systems Operational</strong>
+          </section>
+
+          <section class="tg-panel tg-panel--metrics">
+            <div class="tg-panel__header">Summary</div>
+            <div class="tg-metrics">
+              <div class="metric metric--danger">
+                <div class="metric__label">Critical Threats</div>
+                <div class="metric__value" id="metric-dangerous">0</div>
+              </div>
+              <div class="metric metric--warning">
+                <div class="metric__label">High Threats</div>
+                <div class="metric__value" id="metric-warning">0</div>
+              </div>
+              <div class="metric metric--medium">
+                <div class="metric__label">Medium Threats</div>
+                <div class="metric__value" id="metric-safe">0</div>
+              </div>
+              <div class="metric metric--total">
+                <div class="metric__label">Total Alerts</div>
+                <div class="metric__value" id="metric-total">0</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tg-panel tg-panel--alerts">
+            <div class="tg-panel__header">Alert Trends</div>
+            <div class="tg-trends">
+              <div class="tg-trends__chart tg-trends__chart--wide">
+                <div class="tg-trends__chart-header">Phishing Alerts by Domain</div>
+                <canvas id="chart"></canvas>
+              </div>
+              <div class="tg-trends__chart tg-trends__chart--half">
+                <div class="tg-trends__chart-header">Phishing by URL Length</div>
+                <canvas id="chartLength"></canvas>
+              </div>
+              <div class="tg-trends__chart tg-trends__chart--half">
+                <div class="tg-trends__chart-header">HTTPS vs HTTP (Phishing URLs)</div>
+                <canvas id="chartProtocol"></canvas>
+              </div>
+            </div>
+          </section>
+
+          <section class="tg-section tg-section--system">
+            <h2>System Status</h2>
+            <div class="tg-table__wrap">
+              <table class="tg-table" id="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Received At</th>
+                    <th>Severity</th>
+                    <th>Category</th>
+                    <th>Threat Category</th>
+                    <th>Recommended Action</th>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+
+        <footer class="tg-footer">
+          <span></span>
+        </footer>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
