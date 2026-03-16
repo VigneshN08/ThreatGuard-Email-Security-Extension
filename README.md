@@ -35,13 +35,13 @@ This is a **boilerplate** and requires configuration to work.
 ## Screenshots
 
 ### Extension Popup
-![Popup](screenshots/popup.png)
+![Popup](screenshotspopup.png)
 
 ### Threat Detection Alert
-![Alert](screenshots/alert.png)
+![Alert](screenshotsalert.png)
 
 ### Security Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshotsdashboard.png)
 
 ### Threat Report
-![Report](screenshots/report.png)
+![Report](screenshotsreport.png)
