@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "ThreatGuard: Email Security",
+  "version": "0.1.0",
+  "description": "Analyzes emails in real-time for phishing and malware threats.",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "background": {
+    "service_worker": "src/background.js"
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["src/content.js"],
+      "css": ["css/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": [
+    "storage" 
+  ],
+  
+  "host_permissions": [
+    "*://mail.google.com/*",
+    "https://api.your-threatguard-backend.com/*" 
+  ]
+}
