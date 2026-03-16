@@ -31,3 +31,17 @@ This is a **boilerplate** and requires configuration to work.
     -   The subject line.
     -   The email body.
 -   **This is the hardest part.** Gmail's classes are obfuscated (like `.a3s`) and change often. Look for `data-` attributes or ARIA `role` attributes, which are more stable.
+
+## Screenshots
+
+### Extension Popup
+![Popup](screenshots/popup.png)
+
+### Threat Detection Alert
+![Alert](screenshots/alert.png)
+
+### Security Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Threat Report
+![Report](screenshots/report.png)
